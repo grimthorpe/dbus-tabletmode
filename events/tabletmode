@@ -1,0 +1,4 @@
+# DELL Lattitude 2-in-1 tablet mode
+event=video[ /]tabletmode
+action=/etc/acpi/actions/tabletmode.sh %e
+
