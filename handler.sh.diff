@@ -1,0 +1,38 @@
+*** /etc/acpi/handler.sh	2020-03-09 19:57:27.250539923 +0100
+--- acpi/handler.sh	2020-03-09 19:55:58.614386396 +0100
+*************** case "$1" in
+*** 69,76 ****
+                  ;;
+      esac
+      ;;
+      *)
+!         logger "ACPI group/action undefined: $1 / $2"
+          ;;
+  esac
+  
+--- 69,93 ----
+                  ;;
+      esac
+      ;;
++ #    video/tabletmode)
++ #        case "$3" in
++ #            0000008A)
++ #                case "$4" in
++ #                    00000000)
++ #                        logger 'Tabletmode off'
++ #                        ;;
++ #                    00000001)
++ #                        logger 'Tabletmode on'
++ #                        ;;
++ #                esac
++ #		;;
++ #            *)
++ #                logger "ACPI video/tabletmode action undefined: $3"
++ #                ;;
++ #        esac
++ #    ;;
+      *)
+!         logger "ACPI group/action undefined: $1 / $2 ($3 $4)"
+          ;;
+  esac
+  
