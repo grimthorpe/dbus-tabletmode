@@ -69,23 +69,23 @@ case "$1" in
                 ;;
     esac
     ;;
-#    video/tabletmode)
-#        case "$3" in
-#            0000008A)
-#                case "$4" in
-#                    00000000)
-#                        logger 'Tabletmode off'
-#                        ;;
-#                    00000001)
-#                        logger 'Tabletmode on'
-#                        ;;
-#                esac
-#		;;
-#            *)
-#                logger "ACPI video/tabletmode action undefined: $3"
-#                ;;
-#        esac
-#    ;;
+    video/tabletmode)
+        case "$3" in
+            0000008A)
+                case "$4" in
+                    00000000)
+                        logger 'Tabletmode off'
+                        ;;
+                    00000001)
+                        logger 'Tabletmode on'
+                        ;;
+                esac
+                ;;
+            *)
+                logger "ACPI video/tabletmode action undefined: $3"
+                ;;
+        esac
+    ;;
     *)
         logger "ACPI group/action undefined: $1 / $2 ($3 $4)"
         ;;
