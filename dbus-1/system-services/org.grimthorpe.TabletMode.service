@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.grimthorpe.TabletMode
+Exec=/usr/sbin/dbus-tabletmode.py
+User=nobody
