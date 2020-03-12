@@ -23,7 +23,6 @@ class TabletMode(dbus.service.Object):
     @dbus.service.method(dbus_interface='org.grimthorpe.TabletMode',
                          in_signature='b', out_signature='')
     def SetTabletMode(self, tabletmode):
-        print("SetTabletMode called with %d" % tabletmode)
         if(tabletmode != self.tabletmode):
             self.tabletmode=tabletmode
             self.TabletModeChanged(tabletmode)
@@ -32,7 +31,6 @@ class TabletMode(dbus.service.Object):
     @dbus.service.method(dbus_interface='org.grimthorpe.TabletMode',
                          in_signature='', out_signature='b')
     def GetTabletMode(self):
-        print("GetTabletMode called")
         return self.tabletmode
 
     ''' Signal that the TabletMode has changed.
