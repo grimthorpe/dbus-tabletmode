@@ -1,24 +1,28 @@
 # dell-tabletmode
-DELL tabletmode ACPI handler
+Tablet Mode ACPI event handler
 
-These files provide ACPI handlers for DELL Latitude 7275 (and maybe other)
-2-in-1 laptops.
-
-This is based off using acpid in Arch linux on the last commit date in the
-repository - I accept no responsibility if this breaks something vital on
-your machine.
+These files provide ACPI handlers for convertable laptops and present the
+state as a system DBus object.
 
 
-INSTALLATION:
+The ACPI event it works off is video/tabletmode TBLT 0000008A 0000000x
+where
 
-Copy the contents of acpi/events to /etc/acpi/events
+x=0 - tablet is connected to the keyboard
 
-Copy the contents of acpi/actions to /etc/acpi/actions
-
-Run sudo systemctl restart acpid.service
+x=1 - tablet is disconenected from the keyboard
 
 
-Optionally either copy acpi/handler.sh to /etc/acpi/handler.sh or apply the
-patch handler.sh.diff to /etc/acpi/handler.sh to suppress the unknown ACPI
-messages the original made.
+The state of the tabletmode can be read from the system DBus address
+org.grimthorpe.TabletMode/TabletMode
+
+Methods:
+
+GetTabletMode() - returns boolean true if in tablet mode, otherwise false.
+
+SetTabletMode(boolean mode) - sets the mode
+
+Signals:
+
+TabletModeChanged(boolean mode) - called if the tablet mode is changed by the last call to SetTabletMode
 
