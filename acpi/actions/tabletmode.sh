@@ -12,7 +12,6 @@ DBUS=1		# Set to 1 to send DBus mode changes to org.grimthorpe.TabletMode
 
 
 case "$3" in
-	# Dell latitude 7275
 	0000008A)
 		case "$4" in
 			00000000)
