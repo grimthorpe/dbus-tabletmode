@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import dbus
 import dbus.service
 
@@ -13,8 +14,8 @@ Defines 1 DBus signal:
 class TabletMode(dbus.service.Object):
     def __init__(self):
         self.tabletmode=False;
-        #self.bus=dbus.SystemBus()
-        self.bus=dbus.SessionBus()
+        self.bus=dbus.SystemBus()
+        #self.bus=dbus.SessionBus()
         name=dbus.service.BusName('org.grimthorpe.TabletMode', bus=self.bus)
         super().__init__(name, '/TabletMode')
 

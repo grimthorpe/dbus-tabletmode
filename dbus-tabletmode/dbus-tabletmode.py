@@ -10,8 +10,8 @@ and to run custom scripts (e.g. show OnBoard)
 
 import dbus
 
-#bus=dbus.SystemnBus()
-bus=dbus.SessionBus()
+bus=dbus.SystemBus()
+#bus=dbus.SessionBus()
 
 tabletmode=bus.get_object('org.grimthorpe.TabletMode', '/TabletMode')
 mode=tabletmode.GetTabletMode()
