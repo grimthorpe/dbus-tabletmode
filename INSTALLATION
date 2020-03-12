@@ -1,0 +1,10 @@
+Copy acpi/events/* to /etc/acpi/events
+Copy acpi/actions/* to /etc/acpi/actions
+Copy bin/* to /usr/local/bin (or your perfered location for runnable scripts)
+
+As root:
+# systemctl reload dbus
+# tabletmode-service.py
+
+This will get the DBus service running and responding to the ACPI events.
+
