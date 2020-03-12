@@ -8,9 +8,7 @@
 TABLETMODE=-1
 
 DEBUG=1		# Set to 1 to log all events
-# onboard doesn't work as we need access to the user's session rather than the ACPI session
-ONBOARD=0	# Set to 1 to show / hide the onboard keyboard when tablet mode changes
-
+DBUS=1		# Set to 1 to send DBus mode changes to org.grimthorpe.TabletMode
 
 
 case "$3" in
@@ -50,15 +48,13 @@ if [ "$DEBUG" == "1" ]; then
 	esac
 fi
 
-if [ "$ONBOARD" == "1" ]; then
+if [ "$DBUS" == "1" ]; then
 	case "$TABLETMODE" in
 		0)
-			dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.Hide
+			dbus-send --system --type=method_call --dest=org.grimthorpe.TabletMode /TabletMode org.grimthorpe.TabletMode.SetTabletMode boolean:false
 			;;
 		1)
-			#dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.Show
-			dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.Hide
-			dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.ToggleVisible
+			dbus-send --system --type=method_call --dest=org.grimthorpe.TabletMode /TabletMode org.grimthorpe.TabletMode.SetTabletMode boolean:true
 			;;
 		-1)
 			logger "tabletmode: Unsupported ACPI $1 $2 \$3: $3 ($4)"
