@@ -17,7 +17,7 @@ class TabletMode(dbus.service.Object):
         self.bus=dbus.SystemBus()
         #self.bus=dbus.SessionBus()
         name=dbus.service.BusName('org.grimthorpe.TabletMode', bus=self.bus)
-        super().__init__(name, '/TabletMode')
+        super().__init__(name, '/org/grimthorpe/TabletMode')
 
     ''' Set the TabletMode '''
     @dbus.service.method(dbus_interface='org.grimthorpe.TabletMode',

@@ -13,7 +13,7 @@ import dbus
 bus=dbus.SystemBus()
 #bus=dbus.SessionBus()
 
-tabletmode=bus.get_object('org.grimthorpe.TabletMode', '/TabletMode')
+tabletmode=bus.get_object('org.grimthorpe.TabletMode', '/org/grimthorpe/TabletMode')
 mode=tabletmode.GetTabletMode()
 
 print("The current mode is", mode)

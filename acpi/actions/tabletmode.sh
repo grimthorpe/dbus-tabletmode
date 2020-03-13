@@ -50,10 +50,10 @@ fi
 if [ "$DBUS" == "1" ]; then
 	case "$TABLETMODE" in
 		0)
-			dbus-send --system --type=method_call --dest=org.grimthorpe.TabletMode /TabletMode org.grimthorpe.TabletMode.SetTabletMode boolean:false
+			dbus-send --system --type=method_call --dest=org.grimthorpe.TabletMode /org/grimthorpe/TabletMode org.grimthorpe.TabletMode.SetTabletMode boolean:false
 			;;
 		1)
-			dbus-send --system --type=method_call --dest=org.grimthorpe.TabletMode /TabletMode org.grimthorpe.TabletMode.SetTabletMode boolean:true
+			dbus-send --system --type=method_call --dest=org.grimthorpe.TabletMode /org/grimthorpe/TabletMode org.grimthorpe.TabletMode.SetTabletMode boolean:true
 			;;
 		-1)
 			logger "tabletmode: Unsupported ACPI $1 $2 \$3: $3 ($4)"

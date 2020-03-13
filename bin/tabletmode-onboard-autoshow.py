@@ -30,7 +30,7 @@ class TabletModeClient():
 
     def connect_to_dbus(self):
         self.onboardobject=self.sessionbus.get_object("org.onboard.Onboard", "/org/onboard/Onboard/Keyboard")
-        self.tabletmodeobject=self.systembus.get_object("org.grimthorpe.TabletMode", "/TabletMode")
+        self.tabletmodeobject=self.systembus.get_object("org.grimthorpe.TabletMode", "/org/grimthorpe/TabletMode")
         self.tabletmode_changed(self.tabletmodeobject.GetTabletMode())
         self.tabletmodeobject.connect_to_signal("TabletModeChanged", self.tabletmode_changed, dbus_interface="org.grimthorpe.TabletMode")
 
