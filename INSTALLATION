@@ -1,15 +1,18 @@
 Copy acpi/events/* to /etc/acpi/events
 Copy acpi/actions/* to /etc/acpi/actions
 Copy bin/* to /usr/local/bin (or your perfered location for runnable scripts)
+Copy systemd/system/* to /lib/systemd/system
 
 As root:
 # systemctl reload dbus
-# tabletmode-service.py
+# systemctl enable tabletmode
+# systemctl start tabletmode
 
 This will get the DBus service running and responding to the ACPI events.
 
 tabletmode-onboard-autoshow.py can be run in the background as the logged-in
 user to automatically show and hide the Onboard virtual keyboard depending
-on the tablet mode.
+on the tablet mode. This can be done by adding it to the list of startup
+scripts in Plasma
 
 tabletmode-get.py is a python script to get the the tablet mode.
