@@ -8,3 +8,8 @@ As root:
 
 This will get the DBus service running and responding to the ACPI events.
 
+tabletmode-onboard-autoshow.py can be run in the background as the logged-in
+user to automatically show and hide the Onboard virtual keyboard depending
+on the tablet mode.
+
+tabletmode-get.py is a python script to get the the tablet mode.
