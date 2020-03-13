@@ -1,0 +1,10 @@
+[Unit]
+Description=ACPI Tabletmode to DBus service
+
+[Service]
+Type=simple
+ExecStart=/bin/python /usr/local/bin/tabletmode-service.py
+
+[Install]
+WantedBy=multi-user.target
+
