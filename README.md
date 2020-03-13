@@ -1,4 +1,4 @@
-# dell-tabletmode
+# dbus-tabletmode
 Tablet Mode ACPI event handler
 
 These files provide ACPI handlers for convertable laptops and present the
