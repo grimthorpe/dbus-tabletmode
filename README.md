@@ -14,7 +14,7 @@ x=1 - tablet is disconenected from the keyboard
 
 
 The state of the tabletmode can be read from the system DBus address
-org.grimthorpe.TabletMode/TabletMode
+org.grimthorpe.TabletMode /org/grimthorpe/TabletMode
 
 Methods:
 
