@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+# Taken from https://gist.github.com/ei-grad/4d9d23b1463a99d24a8d/
+# Modified to work with python 3
+# I have no idea what licence the code is under - grimthorpe
 
 from time import sleep
 from os import path as op
